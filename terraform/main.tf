@@ -13,7 +13,7 @@ terraform {
       version = "~> 3.1.1"
     }
   }
-
+# Configure remote state storage in S3
   backend "s3" {
     bucket         = "tic-tac-toe1214-bucket"
     key            = "terraform.tfstate"
