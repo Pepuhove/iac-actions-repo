@@ -80,11 +80,11 @@ jobs:
         if: steps.apply.outcome == 'success'
         run: aws eks update-kubeconfig --name ${{ env.EKS_CLUSTER }} --region ${{ env.AWS_REGION }}
       
-      - name: Install Ingress Controller
-        id: ingress
-        if: steps.getconfig.outcome == 'success'
-        run: |
-          kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/aws/deploy.yaml
+      # - name: Install Ingress Controller
+      #   id: ingress
+      #   if: steps.getconfig.outcome == 'success'
+      #   run: |
+      #     kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/aws/deploy.yaml
 
 
   terraform_destroy:
@@ -129,10 +129,10 @@ jobs:
         if: steps.apply.outcome == 'success'
         run: aws eks update-kubeconfig --name ${{ env.EKS_CLUSTER }} --region ${{ env.AWS_REGION }}
 
-      - name: Delete Ingress Controller
-        id: uninstall_ingress
-        run: |
-          kubectl delete -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/aws/deploy.yaml
+      # - name: Delete Ingress Controller
+      #   id: uninstall_ingress
+      #   run: |
+      #     kubectl delete -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/aws/deploy.yaml
       
       - name: Empty ECR
         run: |
