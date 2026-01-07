@@ -5,7 +5,7 @@ variable "aws_region" {
 }
 
 variable "name" {
-  default = "githubactions-eks"
+  default = "tic-tac-toe-eks"
 }
 
 variable "ecr_repo" {
