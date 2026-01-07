@@ -6,16 +6,16 @@ module "eks" {
   name               = var.name
   kubernetes_version = var.k8s_version
 
-  addons = {
-    coredns                = {}
-    eks-pod-identity-agent = {
-      before_compute = true
-    }
-    kube-proxy             = {}
-    vpc-cni                = {
-      before_compute = true
-    }
-  }
+  # addons = {
+  #   coredns                = {}
+  #   eks-pod-identity-agent = {
+  #     before_compute = true
+  #   }
+  #   kube-proxy             = {}
+  #   vpc-cni                = {
+  #     before_compute = true
+  #   }
+  # }
 
   # Optional
   endpoint_public_access = true
