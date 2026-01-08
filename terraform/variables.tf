@@ -5,15 +5,15 @@ variable "aws_region" {
 }
 
 variable "name" {
-  default = "tic-tac-toe-eks"
+  default = "game-eks"
 }
 
 variable "ecr_repo" {
-  default = "gitops-webapp"
+  default = "game-app"
 }
 
 variable "k8s_version" {
-  default = "1.33"
+  default = "1.35.0"
 }
 
 variable "vpc_cidr_block" {
